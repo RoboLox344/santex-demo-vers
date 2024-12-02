@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- <script defer src="js/Sb-Cat-Otop.js"></script> -->
+    <script defer src="js/haeder-footer.js"></script>
+    <script defer src="js/filter.js"></script>
+    
+    <script defer src="/js/modalCart.js"></script>
+    <script defer src="/js/authoris.js"></script>
+    <script defer src="/js/searchHeader.js"></script>
+    
+    <title>Brand</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <%- include("partials/menu.ejs")%>
+    <%- include("partials/modallogin.ejs")%>
+    <main>
+        <section id="brands">
+            <div class="container">
+                <div class="brends-main-wp">
+                    <% brands.forEach(brand => { %>
+                        <div class="item-brends" id='<%= brand.brand_id %>'>
+                            <a class='flex-ref' href="/brandejs/id/<%= brand.brand_id %>">
+                                <div class='img-wp-brends'>
+                                    <img src="/img/<%= brand.filename %>.jpg" alt="" class="brends-img">
+                                </div>
+                                <p class="name-brends"><%= brand.name %></p>
+                            </a>
+                        </div>
+                    <% }); %>
+                </div>
+                
+            </div>
+        </section>
+        
+
+
+    </main>
+    <%- include("partials/footer.ejs")%>
+    <%- include("partials/card.ejs")%>
+</body>
+</html>

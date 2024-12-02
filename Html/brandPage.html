@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script defer src="js/index.js"></script>
+        <script defer src="js/cart-hover-foto.js"></script>
+        <script defer src="js/haeder-footer.js"></script>
+        <script defer src="js/targetBrend.js"></script>
+        <script defer src="js/filter.js"></script>
+        <title>Стринца Бренда</title>
+    </head>
+<body>
+    <header class="container container-header">
+        <nav class="wrapper-header">
+        <!-- <div class="wrapper-header"> -->
+            <div class="wp-logo" >
+                <a href="index.html"  class="hd-logo">
+                          <img src="img/logo-svg.svg" alt="" class="svg-logo">   
+                </a>
+            </div>
+            
+            <ul class="wp-nav">
+                <li class="haeder-burger">
+                    <svg height="20" width="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" class="svg-burger"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Menu_Alt_05"> 
+                    <path id="Vector" d="M5 17H13M5 12H19M11 7H19" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    </path> 
+                    </g> </g></svg>
+                </li>
+                <li class="header-item-list">
+                    <a id="Katalog" class="nav-text drop-button">Каталог</a>
+                </li>
+                <li class="header-item-list">
+                    <a href="#" class="nav-text">Доставка</a>
+                </li>
+                <li class="header-item-list">
+                    <a href="brends.html" class="nav-text">Бренды</a>
+                </li>
+                <li class="header-item-list">
+                    <a href="#" class="nav-text">Контакты</a>
+                </li>
+            </ul>
+            
+
+            <form class="form-search">
+                <input type="text" class="input-search"  name="" id="" placeholder="Тут можно найти">
+                <button type="submit" class="button-search display-none-mob">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5726 16.0029C10.5755 19.1865 4.988 18.3056 2.02842 14.6542C-0.828088 11.129 -0.64944 6.04347 2.44943 2.82482C5.65137 -0.500594 10.6854 -0.944524 14.3346 1.78337C15.642 2.76051 16.6183 4.00364 17.2542 5.50838C17.8938 7.02186 18.0881 8.59654 17.8663 10.2205C17.6452 11.837 17 13.2775 15.9499 14.6217C16.0349 14.6773 16.1255 14.7173 16.1904 14.7822C17.3448 15.9311 18.4947 17.0843 19.6491 18.2331C19.9227 18.5054 20.0589 18.8225 19.9776 19.2047C19.8165 19.9651 18.9107 20.2586 18.3298 19.7366C18.0575 19.4925 17.807 19.2234 17.5484 18.9649C16.6002 18.0177 15.6526 17.0699 14.7044 16.1227C14.665 16.0853 14.6238 16.0503 14.5726 16.0029ZM15.9605 8.98677C15.9705 5.12689 12.8529 2.00627 8.98261 2.00065C5.12292 1.99503 2.00781 5.09068 1.99094 8.94806C1.97408 12.8173 5.08544 15.9467 8.96762 15.9648C12.8117 15.9829 15.9505 12.8504 15.9605 8.98677Z" />
+                    </svg>      
+                </button>
+            </form>
+
+            <button class="button-cart display-none-mob">
+                <div class="count-basket-item-wp">
+                    <div class="item-basket-pop-count">
+                        0
+                    </div>
+                </div>
+                <svg width="31" height="24" viewBox="0 0 31 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.1558 20.25H9.89066C6.78905 20.25 4.26569 17.7267 4.26569 14.6251V8.85947C4.26569 5.9762 2.82861 3.30739 0.421544 1.72031C-0.0107343 1.43531 -0.130077 0.853876 0.154921 0.421598C0.439919 -0.0107278 1.02131 -0.130118 1.45368 0.154974C2.82776 1.06097 3.94254 2.2559 4.73969 3.63167C4.91195 3.82466 6.30104 5.29699 8.57821 5.29699H19.3738C22.3191 5.24191 24.6245 8.19769 23.8544 11.0406L22.6117 15.9939C21.9829 18.4998 19.7394 20.25 17.1558 20.25ZM5.90415 6.64234C6.06001 7.36238 6.14068 8.10483 6.14068 8.85947V14.6251C6.14068 16.6928 7.82292 18.375 9.89066 18.375H17.1558C18.8782 18.375 20.3739 17.2082 20.793 15.5376L22.0358 10.5844C22.4933 8.89509 21.1233 7.13931 19.3738 7.17198H8.57817C7.54828 7.17198 6.65185 6.94993 5.90415 6.64234ZM9.42191 22.8281C9.42191 22.1809 8.89724 21.6563 8.25004 21.6563C6.69511 21.7182 6.69647 23.9387 8.25004 24C8.89724 24 9.42191 23.4753 9.42191 22.8281ZM18.75 22.8281C18.75 22.1809 18.2253 21.6563 17.5781 21.6563C16.0232 21.7182 16.0245 23.9387 17.5781 24C18.2253 24 18.75 23.4753 18.75 22.8281ZM20.3113 9.98446C20.3113 9.46668 19.8916 9.04697 19.3738 9.04697H8.95316C7.7093 9.09647 7.71023 10.8729 8.95316 10.922H19.3738C19.8916 10.922 20.3113 10.5022 20.3113 9.98446Z" fill="white"/>
+                    
+                </svg>
+            </button>
+
+            <div class="login-wraper-button">
+                
+                <button class="button button-login display-none-mob">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" class="svg-login"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.1592 10.1003H8.125"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15.7207 7.66992L18.1607 10.0999L15.7207 12.5299"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.6328 6.35768C13.3578 3.37435 12.2411 2.29102 7.79948 2.29102C1.88198 2.29102 1.88198 4.21602 1.88198 9.99935C1.88198 15.7827 1.88198 17.7077 7.79948 17.7077C12.2411 17.7077 13.3578 16.6243 13.6328 13.641"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                    <span class="center display-none">Войти</span>
+                </button>
+            </div>
+
+       <!--  </div> -->
+        </nav>
+        <!-- выпадающий каталог -->
+         <div class="modal-catalog">
+            <div class="md-catalog-wrap">
+                <ul class="catatlog-list">
+                    <li ><a href="otoplenie.html" class="catalog-list--item">Отопление</a></li>
+                    <li ><a href="santex.html" class="catalog-list--item">Сантехника</a></li>
+                    <li ><a href="instum.html" class="catalog-list--item">Инструменты</a></li>
+                    <li ><a href="dacha.html" class="catalog-list--item">Для дачи и сада</a></li>
+                </ul>
+            </div>
+         </div>
+        
+    </header>
+
+    
+    <!--бурегр мобилка-->
+    <div class="menu-down-wp menu-down-wp-active">
+        
+                <div class="wp-logo-mob" >
+                    <a href="index.html"  class="hd-logo">
+                        <img src="img/logo-svg.svg" alt="" class="svg-logo">   
+                    </a>
+                </div>
+                
+                <ul class="wp-nav-mob">
+                    <li class="haeder-burger header-burger-mob">
+                        <svg height="20" width="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Menu / Menu_Alt_05"> 
+                        <path id="Vector" d="M5 17H13M5 12H19M11 7H19" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        </path> 
+                        </g> </g></svg>
+                    </li>
+                </ul>
+                
+    
+           <!--  </div> -->
+        <div class="round-menu-wp">
+            <svg class='loader-example' viewBox='0 0 100 100'>
+                <defs>
+                    <filter id='goo'>
+                        <feGaussianBlur in='SourceGraphic' stdDeviation='8' result='blur' />
+                        <feColorMatrix in='blur' mode='matrix' values='1 0 0 0 0
+                                                                       0 1 0 0 0
+                                                                       0 0 1 0 0
+                                                                       0 0 0 25 -8' result='goo' />
+                        <feBlend in='SourceGraphic' in2='goo' />
+                    </filter>
+                </defs>
+                <g filter='url(#goo)' fill='#0D1115' stroke='#ff214f'>
+                    <g transform='translate(50, 50)'>
+                        <g class='circle -a'>
+                            <g transform='translate(-50, -50)'>
+                                <circle cx='25' cy='50' r='9' />
+                            </g>
+                        </g>
+                    </g>
+                    <g transform='translate(50, 50)'>
+                        <g class='circle -b'>
+                            <g transform='translate(-50, -50)'>
+                                <circle cx='50' cy='25' r='8'  />
+                            </g>
+                        </g>
+                    </g>
+                    <g transform='translate(50, 50)'>
+                        <g class='circle -c'>
+                            <g transform='translate(-50, -50)'>
+                                <circle cx='75' cy='50' r='7' />
+                            </g>
+                        </g>
+                    </g>
+                    <g transform='translate(50, 50)'>
+                        <g class='circle -d'>
+                            <g transform='translate(-50, -50)'>
+                                <circle cx='50' cy='75' r='6' />
+                            </g>
+                        </g>
+                    </g>
+                    <g transform='translate(50, 50)'>
+                        <g class='circle -e'>
+                            <g transform='translate(-50, -50)'>
+                                <circle cx='25' cy='50' r='5' />
+                            </g>
+                        </g>
+                    </g>
+                    <g transform='translate(50, 50)'>
+                        <g class='circle -f'>
+                            <g transform='translate(-50, -50)'>
+                                <circle cx='50' cy='25' r='4' />
+                            </g>
+                        </g>
+                    </g>
+                    <g transform='translate(50, 50)'>
+                        <g class='circle -g'>
+                            <g transform='translate(-50, -50)'>
+                                <circle cx='75' cy='50' r='3' />
+                            </g>
+                        </g>
+                    </g>
+                    <g transform='translate(50, 50)'>
+                        <g class='circle -h'>
+                            <g transform='translate(-50, -50)'>
+                                <circle cx='50' cy='75' r='2' />
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <div class="round-menu-down-items round-menu-down-items-1">
+                <button class="button button-login z-index-button-burger">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" class="svg-login"  xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.1592 10.1003H8.125"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15.7207 7.66992L18.1607 10.0999L15.7207 12.5299"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.6328 6.35768C13.3578 3.37435 12.2411 2.29102 7.79948 2.29102C1.88198 2.29102 1.88198 4.21602 1.88198 9.99935C1.88198 15.7827 1.88198 17.7077 7.79948 17.7077C12.2411 17.7077 13.3578 16.6243 13.6328 13.641"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>         
+                </button>
+            </div>
+            <div class="round-menu-down-items round-menu-down-items-2">
+                <button type="submit" class="button-search button-sh-mob">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg" class="Sh-mob-svg">
+                        <path d="M14.5726 16.0029C10.5755 19.1865 4.988 18.3056 2.02842 14.6542C-0.828088 11.129 -0.64944 6.04347 2.44943 2.82482C5.65137 -0.500594 10.6854 -0.944524 14.3346 1.78337C15.642 2.76051 16.6183 4.00364 17.2542 5.50838C17.8938 7.02186 18.0881 8.59654 17.8663 10.2205C17.6452 11.837 17 13.2775 15.9499 14.6217C16.0349 14.6773 16.1255 14.7173 16.1904 14.7822C17.3448 15.9311 18.4947 17.0843 19.6491 18.2331C19.9227 18.5054 20.0589 18.8225 19.9776 19.2047C19.8165 19.9651 18.9107 20.2586 18.3298 19.7366C18.0575 19.4925 17.807 19.2234 17.5484 18.9649C16.6002 18.0177 15.6526 17.0699 14.7044 16.1227C14.665 16.0853 14.6238 16.0503 14.5726 16.0029ZM15.9605 8.98677C15.9705 5.12689 12.8529 2.00627 8.98261 2.00065C5.12292 1.99503 2.00781 5.09068 1.99094 8.94806C1.97408 12.8173 5.08544 15.9467 8.96762 15.9648C12.8117 15.9829 15.9505 12.8504 15.9605 8.98677Z" />
+                    </svg>      
+                </button>
+            </div>
+            <div class="round-menu-down-items round-menu-down-items-3">
+                <button class="button-cart button-cart-mob">
+                    <svg width="31" height="24" viewBox="0 0 31 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-cart-button">
+                        <path d="M17.1558 20.25H9.89066C6.78905 20.25 4.26569 17.7267 4.26569 14.6251V8.85947C4.26569 5.9762 2.82861 3.30739 0.421544 1.72031C-0.0107343 1.43531 -0.130077 0.853876 0.154921 0.421598C0.439919 -0.0107278 1.02131 -0.130118 1.45368 0.154974C2.82776 1.06097 3.94254 2.2559 4.73969 3.63167C4.91195 3.82466 6.30104 5.29699 8.57821 5.29699H19.3738C22.3191 5.24191 24.6245 8.19769 23.8544 11.0406L22.6117 15.9939C21.9829 18.4998 19.7394 20.25 17.1558 20.25ZM5.90415 6.64234C6.06001 7.36238 6.14068 8.10483 6.14068 8.85947V14.6251C6.14068 16.6928 7.82292 18.375 9.89066 18.375H17.1558C18.8782 18.375 20.3739 17.2082 20.793 15.5376L22.0358 10.5844C22.4933 8.89509 21.1233 7.13931 19.3738 7.17198H8.57817C7.54828 7.17198 6.65185 6.94993 5.90415 6.64234ZM9.42191 22.8281C9.42191 22.1809 8.89724 21.6563 8.25004 21.6563C6.69511 21.7182 6.69647 23.9387 8.25004 24C8.89724 24 9.42191 23.4753 9.42191 22.8281ZM18.75 22.8281C18.75 22.1809 18.2253 21.6563 17.5781 21.6563C16.0232 21.7182 16.0245 23.9387 17.5781 24C18.2253 24 18.75 23.4753 18.75 22.8281ZM20.3113 9.98446C20.3113 9.46668 19.8916 9.04697 19.3738 9.04697H8.95316C7.7093 9.09647 7.71023 10.8729 8.95316 10.922H19.3738C19.8916 10.922 20.3113 10.5022 20.3113 9.98446Z" fill="white"/>
+                        <circle cx="23" cy="8" r="7" fill="#F6D863" stroke="#0D1115" stroke-width="2"/>
+                        <path d="M25.12 8.83C25.12 7.58 24.1 6.62 22.95 6.62C22.84 6.62 22.75 6.63 22.66 6.65L24.25 4.4H23L21.35 6.73C21.12 7.06 20.95 7.31 20.84 7.49C20.73 7.67 20.64 7.87 20.56 8.1C20.49 8.32 20.45 8.56 20.45 8.82C20.42 10.12 21.53 11.13 22.78 11.11C24.04 11.11 25.12 10.12 25.12 8.83ZM24.07 8.83C24.07 9.2 23.94 9.52 23.69 9.77C23.44 10.02 23.14 10.14 22.78 10.14C22.41 10.14 22.11 10.02 21.86 9.77C21.61 9.52 21.49 9.2 21.49 8.83C21.49 8.46 21.61 8.15 21.86 7.9C22.11 7.65 22.41 7.52 22.78 7.52C23.14 7.52 23.44 7.65 23.69 7.9C23.94 8.15 24.07 8.46 24.07 8.83Z" fill="#0D1115"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="menu-down-nav">
+                <a  id="CatalogDown" class="nav-text drop-button-down">Каталог</a>
+            
+                <a href="#" class="nav-text">Доставка</a>
+            
+                <a href="brends.html" class="nav-text">Бренды</a>
+            
+                <a href="#" class="nav-text">Контакты</a>
+        </div>
+        <div class="menu-down-category">
+            <a href="otoplenie.html" class="catalog-list--item-down">Отопление</a>
+            <a href="santex.html" class="catalog-list--item-down">Сантехника</a>
+            <a href="instum.html" class="catalog-list--item-down">Инструменты</a>
+            <a href="dacha.html" class="catalog-list--item-down">Для дачи и сада</a>
+        </div>
+    </div>
+    <!-- Онка логина и регистр -->
+    <div class="modal-login">
+       
+        <div class="wraper-modal-entry">
+
+            <button class="button-modal--exit">
+                <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.170067 0.170067C0.396823 -0.056689 0.764467 -0.056689 0.991223 0.170067L6 5.17884L11.0088 0.170067C11.2355 -0.056689 11.6032 -0.056689 11.8299 0.170067C12.0567 0.396823 12.0567 0.764467 11.8299 0.991223L6.82116 6L11.8299 11.0088C12.0567 11.2355 12.0567 11.6032 11.8299 11.8299C11.6032 12.0567 11.2355 12.0567 11.0088 11.8299L6 6.82116L0.991223 11.8299C0.764467 12.0567 0.396823 12.0567 0.170067 11.8299C-0.056689 11.6032 -0.056689 11.2355 0.170067 11.0088L5.17884 6L0.170067 0.991223C-0.056689 0.764467 -0.056689 0.396823 0.170067 0.170067Z" fill="#7880B5"/>
+                </svg>  
+            </button>
+
+            <div class="auto-select">
+                <h2 ><a class="text modal-text-entry-main" href="#">Вход</a></h2>
+                <span class="line"></span>
+                <h2 ><a class="text modal-text-regist" id="RegisterRef" href="#">Регистрация</a></h2>
+            </div>
+                <p class="form-entry-label">Enter your username and password to login.</p>
+            <form   class="form-entry">
+                
+                    <input type="text" name="Login" id="Login" class="input-entry-login" placeholder="Введите ваш логин" required  minlength="4">
+
+                    <input type="password" name="Password" id="Password" class="input-entry-password" placeholder="Введите пароль" required  minlength="4">
+                   
+                    <a  href="" id="ButtonEntrance"   class=" button button-entry center">    
+                        Вход
+                    </a>
+                    
+                    
+            </form>
+            <div class="alt-register">
+                <span class="text-register-whit">
+                    Or register with
+                </span>
+            </div>
+
+            <div class="alt-continue">
+                <button type="button" class="  googl-continue-button"> f</button>
+                <button type="button" class="  fs-continue-button"> f</button>
+            </div>
+        </div>
+
+
+        <div class="wraper-modal-login">
+
+            <button id="Button-ex-login" class="button-modal--exit">
+                <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.170067 0.170067C0.396823 -0.056689 0.764467 -0.056689 0.991223 0.170067L6 5.17884L11.0088 0.170067C11.2355 -0.056689 11.6032 -0.056689 11.8299 0.170067C12.0567 0.396823 12.0567 0.764467 11.8299 0.991223L6.82116 6L11.8299 11.0088C12.0567 11.2355 12.0567 11.6032 11.8299 11.8299C11.6032 12.0567 11.2355 12.0567 11.0088 11.8299L6 6.82116L0.991223 11.8299C0.764467 12.0567 0.396823 12.0567 0.170067 11.8299C-0.056689 11.6032 -0.056689 11.2355 0.170067 11.0088L5.17884 6L0.170067 0.991223C-0.056689 0.764467 -0.056689 0.396823 0.170067 0.170067Z" fill="#7880B5"/>
+                </svg>  
+            </button>
+
+            <div class="auto-select login">
+                <h2 ><a class="text modal-text-entry" href="#">Вход</a></h2>
+                <span class="line"></span>
+                <h2 ><a class="text modal-text-regist-main" href="#">Регистрация</a></h2> 
+            </div>
+            <p class="form-entry-label">Enter your username and password to login.</p>
+            <form  action="https://jsonplaceholder.typicode.com/posts" method="post" class="form-entry">
+                
+                    <input type="text" name="Username" id="Username" class="input-Username" placeholder="Username" required  minlength="4">
+
+                    <input type="email" name="Email" id="Email" class="input-Email" placeholder="Enter your email address" required  minlength="4">
+
+                    <input type="password" name="CreatePassword" id="CreatePassword" class="input-CreatePassword" placeholder="Enter your email address" required  minlength="4">
+
+                    <input type="password" name="PasswordConfrm" id="PasswordConfrm" class="input-PasswordConfrm" placeholder="Confirm Password" required  minlength="4">
+
+                    <button type="submit" class=" button button-entry">    
+                        Вход
+                    </button>
+            </form>
+            <div class="alt-register">
+                <span class="text-register-whit">
+                    Or register with
+                </span>
+            </div>
+
+            <div class="alt-continue ">
+                <button type="button" class="  googl-continue-button"> f</button>
+                <button type="button" class="  fs-continue-button"> f</button>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <!-- sdsdssssssssssssss -->
+    <main>
+        <section id="otoplenie">
+            <div class="container container-ferst-mobail">
+                <h2 class="text-hd--katalog">Отопление</h2><sup class="total-count">333</sup>
+                <div class="present-brends-wp">
+                    <div class="img-traget-brends-wp">
+                        <img src="" alt="" class="img-traget-brends">
+                    </div>
+                    <div class="wp-text-target-breand">
+                        <p class="text-target-breand">
+
+                            
+                        </p>
+                    </div>
+                </div>
+            
+            </div>
+        </section>
+
+        <section id="Otop-tovar">
+            <div class="container cont-bt-mob">
+                <div class="wp-otoplenie">
+                    <div class="filter-wp">
+                        <div class="producer-list" id="producer">
+                            <h3 class="haeding-filter">Производитель</h3>
+                            <ul class="producer-list-item--wp">
+                                <!-- Производители -->
+                            </ul>
+                        </div>
+                        <div class="filter-scroll-wp" id="FiterScroll">
+                            <h3 class="haeding-filter" id="PriceFilter">Цена</h3>
+                            <div class="filter-scroll-content-wp">
+                                <div class="controller-wp">
+                                    <div class="controller-line">
+                                    <div class="controller-line-back"></div>
+                                        <!-- палка двигалка -->
+                                        <div class="controller-stick stick-left"></div>
+                                        <div class="controller-stick stick-right"></div>
+                                    </div>
+                                </div>
+                                <div class="price-wp">
+                                    <p class="price-filter-text">Цена:</p>
+                                    <span class="filter-price-min">39$</span>
+                                    <span class="tire">-</span>
+                                    <span class="filter-price-max">129$</span>
+                                </div>
+                                <div class="button-filter-wp">
+                                <button class="button button-filter">Применить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="characteristic-wp" id="characteristic">
+                            <h3 class="haeding-filter">Характеристки</h3>
+                            <ul class="characteristic-list-item--wp">
+                                <!-- Характеристки -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="catalog-wp " id="catalog-wp">
+                        <!-- карточки товара -->
+                    </div>
+                    <div class="more">
+                        Показать еще
+                     </div>
+                    
+
+                </div>
+            </div>
+        </section>
+     </main>
+
+    <!-- Футер -->
+    <footer>
+        <section id="footer">
+            <div class="container conatainer-footer-wp">
+                
+                    <div class="conatainer-footer">
+
+                      <div class="container-footer--cont">
+                            <h2 class="footer-text--title">Контакты</h2>
+                            <a href="#" class="footer-address">11710, улица Юности, 
+                                дом 5 строение 4, офис 2</a>  
+                            <a href="mailto:santeh.ventil@mail.ru" class="footer-catalog-links" >santeh.ventil@mail.ru</a>
+                            <a href="tel:+74950050544" class="footer-catalog-links" >+7 495 005-05-44</a>
+                            <div class="footer-help">
+                                <p class="footer-text">Нужна помощь?</p><a href="#" class="footer-help-link">свяжитесь с нами</a>
+                            </div>
+                      </div>
+
+                      <div class="container-footer--katalog">
+                            <h2 class="footer-text--title">Каталог</h2>
+                            <a href="santex.html" class="footer-address">Сантехника</a>  
+                            <a href="otoplenie.html" class="footer-address">Отопление</a>
+                            <a href="instum.html" class="footer-address">Инструменты</a>  
+                            <a href="dacha.html" class="footer-address">Для дачи и сада</a>  
+                        </div>
+
+                        <div class="container-footer--compani">
+                                <h2 class="footer-text--title">Компания</h2>
+                            <a href="#" class="footer-address">О компании</a>
+                            <a href="brends.html" class="footer-address">Партенры</a>  
+                            <a href="#" class="footer-catalog-links">Политика конфиденциальности</a> 
+                        </div>
+
+                        <div class="container-footer--info">
+                            <h2 class="footer-text--title">Информация</h2>
+                            <a href="#" class="footer-address">Юридическая информация</a>
+                            <a href="#" class="footer-address--info">Условия оплаты </a>  
+                            <a href="#" class="footer-address--info">Условия доставки</a> 
+                        </div>
+                     
+                      <div class="conatainer-footer-icons">
+                        <a href="https://www.youtube.com/watch?v=5t_cIH0Px4M" target="_blank" class="icons-footer-animation">
+                          <svg width="25" height="25" viewBox="0 0 25 25" fill="#999999" class="icons" xmlns="http://www.w3.org/2000/svg">
+            
+                            <path d="M17.1779 11.7844C16.3343 11.7844 15.6441 12.449 15.6441 13.2926C15.6441 14.1362 16.3343 14.8263 17.1523 14.8263C17.9959 14.8263 18.6605 14.1362 18.6605 13.3182C18.6861 12.449 18.0214 11.7844 17.1779 11.7844ZM17.1779 14.0595C16.7433 14.0595 16.411 13.7272 16.411 13.2926C16.411 12.858 16.7433 12.5257 17.1779 12.5257C17.6124 12.5257 17.9447 12.8836 17.9447 13.2926C17.9447 13.7272 17.5869 14.0595 17.1779 14.0595Z" />
+                            <path d="M7.7965 9.58598C5.77707 9.56042 4.01327 11.2475 4.06439 13.3948C4.08996 15.3886 5.75151 17.1013 7.84762 17.0757C9.89261 17.0502 11.5542 15.3886 11.5542 13.3436C11.5542 11.2731 9.89261 9.58598 7.7965 9.58598ZM7.84762 15.6187C6.49282 15.6698 5.39364 14.5962 5.39364 13.2925C5.39364 11.9633 6.49282 10.9408 7.71981 10.9663C8.99793 10.9663 10.046 11.9888 10.046 13.2925C10.0715 14.5962 9.04905 15.5676 7.84762 15.6187Z" />
+                            <path d="M12.5 0C5.59815 0 0 5.59815 0 12.5C0 19.4018 5.59815 25 12.5 25C19.4018 25 25 19.4018 25 12.5C25 5.59815 19.4018 0 12.5 0ZM19.683 17.3568C18.9161 17.8425 18.0726 18.0726 17.1779 18.0726C16.7945 18.0726 16.411 18.0215 16.0532 17.9192C15.1585 17.6891 14.3916 17.229 13.7525 16.5644C13.6759 16.4877 13.5992 16.3855 13.4969 16.2832C13.1646 16.7945 12.8323 17.2801 12.5 17.7914C12.1677 17.2801 11.8354 16.7945 11.5031 16.3088C11.4775 16.3088 11.4775 16.3343 11.4775 16.3343L11.4519 16.3599C10.6851 17.2801 9.71369 17.817 8.53782 18.0215C7.8732 18.1237 7.23414 18.0981 6.59509 17.9192C5.7004 17.6636 4.93353 17.2035 4.29447 16.4877C3.68098 15.7975 3.3231 15.0051 3.16973 14.0849C3.01636 13.2413 3.19529 12.4233 3.24642 12.2188C3.39979 11.6309 3.62985 11.1196 3.98773 10.6339C4.01329 10.6084 4.01329 10.5317 4.01329 10.5061C3.88548 9.99488 3.62985 9.53475 3.34867 9.07463C3.27198 8.97238 3.19529 8.87013 3.11861 8.74232V8.71676C3.14417 8.71676 3.14417 8.71676 3.16973 8.71676C4.11554 8.71676 5.06134 8.71676 6.00715 8.71676C6.05828 8.71676 6.08384 8.6912 6.13496 8.66564C6.79958 8.23108 7.51533 7.89876 8.25664 7.64314C8.79345 7.4642 9.33026 7.31083 9.89263 7.20858C10.4294 7.10633 10.9662 7.02964 11.5286 7.00408C12.8579 6.90183 13.9315 7.02964 14.6472 7.13189C15.184 7.20858 15.6953 7.33639 16.2065 7.48977C17.1012 7.77095 17.9192 8.15439 18.7116 8.64007C18.7628 8.66564 18.8394 8.6912 18.9161 8.6912C19.8364 8.6912 20.7566 8.6912 21.6769 8.6912C21.7536 8.6912 21.8302 8.6912 21.9069 8.6912C21.9069 8.71676 21.9069 8.71676 21.9069 8.71676C21.8558 8.79345 21.8302 8.84457 21.7791 8.92126C21.4724 9.40694 21.1912 9.89263 21.0378 10.455C21.0122 10.5061 21.0122 10.5572 21.0634 10.6339C21.8814 11.8098 22.137 13.1135 21.8047 14.5194C21.4468 15.7208 20.7566 16.6666 19.683 17.3568Z" />
+                            <path d="M7.71982 11.7844C6.90182 11.7844 6.21164 12.4746 6.21164 13.2926C6.21164 14.1362 6.90182 14.8008 7.74538 14.8008C8.56338 14.8008 9.25356 14.1106 9.25356 13.267C9.25356 12.449 8.58894 11.7844 7.71982 11.7844ZM7.74538 14.085C7.31082 14.085 6.95295 13.7527 6.95295 13.2926C6.95295 12.858 7.28526 12.5257 7.71982 12.5257C8.15438 12.5257 8.48669 12.858 8.51225 13.2926C8.53781 13.7272 8.17994 14.0595 7.74538 14.085Z" />
+                            <path d="M17.1012 9.61152C15.0562 9.66264 13.4458 11.2986 13.4202 13.3436C13.4202 15.4142 15.1073 17.1268 17.1779 17.1013C19.2484 17.1013 20.9356 15.4397 20.9356 13.3436C20.9356 11.1964 19.1718 9.56039 17.1012 9.61152ZM17.2801 15.6187C15.9253 15.6698 14.8517 14.5962 14.8517 13.2925C14.8517 11.9633 15.9509 10.9408 17.1779 10.9663C18.456 10.9663 19.5041 11.9888 19.5041 13.2925C19.5041 14.5706 18.4816 15.5675 17.2801 15.6187Z" />
+                            <path d="M13.9826 9.86723C14.8006 9.10035 15.7975 8.71692 16.9223 8.61467C15.593 8.02674 14.1871 7.77111 12.73 7.74555C11.094 7.71999 9.48361 7.95005 7.97543 8.58911C9.12574 8.6658 10.1227 9.04923 10.9662 9.8161C11.8098 10.583 12.2955 11.5543 12.4744 12.6791C12.6789 11.5799 13.1646 10.6341 13.9826 9.86723Z" />
+            
+                          </svg>
+            
+                        </a>
+                        <a href="https://ok.ru/" target="_blank" class="icons-footer-animation">
+                          <svg width="25" height="25" viewBox="0 0 25 25" fill="#999999" class="icons" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.7106 8.32552C10.7106 9.35607 11.546 10.1916 12.5766 10.1916C13.6071 10.1916 14.4426 9.35607 14.4426 8.32552C14.4426 7.29496 13.6071 6.4595 12.5766 6.4595C11.546 6.4595 10.7106 7.29496 10.7106 8.32552Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 25C19.4036 25 25 19.4036 25 12.5C25 5.59644 19.4036 0 12.5 0C5.59644 0 0 5.59644 0 12.5C0 19.4036 5.59644 25 12.5 25ZM8.06251 8.32546C8.06251 5.83243 10.0835 3.81137 12.5766 3.81137C15.0697 3.81137 17.0907 5.83243 17.0907 8.32546C17.0907 10.8185 15.0697 12.8397 12.5766 12.8397C10.0835 12.8397 8.06251 10.8185 8.06251 8.32546ZM17.1176 15.1617C17.0604 15.2076 15.9774 16.0634 14.1702 16.4316L16.8981 19.1351C17.3778 19.6141 17.3784 20.3912 16.8994 20.8709C16.4205 21.3506 15.6435 21.3514 15.1636 20.8723L12.5153 18.2933L10.1099 20.8557C9.86912 21.1055 9.54789 21.2311 9.22631 21.2311C8.91959 21.2311 8.61261 21.117 8.37443 20.8873C7.88644 20.4168 7.8723 19.6398 8.34283 19.1518L10.932 16.4459C9.07424 16.0864 7.94659 15.2083 7.88852 15.1617C7.3597 14.7376 7.27476 13.9651 7.69885 13.4362C8.12288 12.9074 8.8953 12.8225 9.42424 13.2465C9.4354 13.2556 10.6149 14.1416 12.5153 14.1429C14.4157 14.1416 15.5707 13.2556 15.5819 13.2465C16.1109 12.8225 16.8833 12.9074 17.3073 13.4362C17.7314 13.9651 17.6464 14.7376 17.1176 15.1617Z" />
+                          </svg>
+            
+                        </a>
+                        <a href="https://vk.com/" target="_blank" class="icons-footer-animation">
+                          <svg width="25" height="25" viewBox="0 0 25 25" fill="#999999" class="icons" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.5 0C5.59815 0 0 5.59815 0 12.5C0 19.4018 5.59815 25 12.5 25C19.4018 25 25 19.4018 25 12.5C25 5.59815 19.4018 0 12.5 0ZM18.8394 13.8548C19.4274 14.4172 20.0409 14.954 20.5521 15.593C20.7822 15.8742 21.0122 16.1554 21.1656 16.4877C21.3957 16.9478 21.1912 17.4591 20.7822 17.4846H18.226C17.5613 17.5358 17.0501 17.2801 16.59 16.82C16.2321 16.4622 15.8998 16.0787 15.5675 15.6953C15.4397 15.5419 15.2863 15.3885 15.1073 15.2863C14.7495 15.0562 14.4427 15.1329 14.2638 15.4908C14.0593 15.8742 14.0082 16.2832 13.9826 16.6922C13.957 17.3057 13.7781 17.4591 13.1646 17.4846C11.8609 17.5358 10.6339 17.3568 9.50919 16.6922C8.51226 16.1043 7.71983 15.3118 7.05521 14.3916C5.72597 12.6022 4.72903 10.6339 3.80879 8.61451C3.60429 8.15439 3.75767 7.92433 4.26891 7.89876C5.11247 7.8732 5.93046 7.8732 6.77402 7.89876C7.10633 7.89876 7.33639 8.10326 7.46421 8.41001C7.92433 9.50919 8.46114 10.5828 9.15132 11.5542C9.33026 11.8098 9.53475 12.0654 9.79038 12.2699C10.0971 12.4744 10.3016 12.3977 10.455 12.0654C10.5317 11.8609 10.5828 11.6309 10.6084 11.4008C10.6851 10.6339 10.6851 9.86707 10.5572 9.10019C10.4806 8.58895 10.2249 8.2822 9.73925 8.17995C9.48363 8.12883 9.53476 8.05214 9.637 7.89876C9.8415 7.6687 10.046 7.51533 10.4294 7.51533H13.318C13.7781 7.61758 13.8804 7.79652 13.9315 8.25664V11.4775C13.9315 11.6564 14.0082 12.1932 14.3405 12.2955C14.5961 12.3722 14.775 12.1677 14.9284 12.0143C15.6186 11.273 16.1043 10.4039 16.5644 9.50919C16.7689 9.10019 16.9223 8.6912 17.1012 8.2822C17.229 7.97545 17.408 7.82208 17.7658 7.82208H20.5521C20.6288 7.82208 20.7055 7.82208 20.8078 7.84764C21.2679 7.92433 21.3957 8.12883 21.2679 8.58895C21.0378 9.30469 20.6033 9.91819 20.1687 10.5061C19.7086 11.1452 19.1973 11.7587 18.7372 12.4233C18.2771 13.0368 18.3026 13.3435 18.8394 13.8548Z" />
+                          </svg>
+            
+                        </a>
+                      </div>
+            
+                    </div>
+                    
+            </div>
+         </section>
+    </footer>
+
+    <!-- корз -->
+    <div class="kozina-modal-container-wp">
+        <div class="kozina-modal-wp">
+            <div class="basket-pop-promo-text" id="Text-lorem">Может че нить купишь уже, тварь</div>
+            
+        </div>
+    
+        <div class="buttons-korzina-wp">
+            <a class="button button-korzina" href="korzina.html" id="">Оформить</a>
+            <button class="button button-korzina" id="BasketClose">Закрыть</button>
+            <div class="total-price-wp">
+                <div class="total-basket-pirce-text">Общая сумма:</div>
+                <div class="total-basket-pirce-wp">
+                    <div class="total-basket-pirce">0</div>
+                    <div class="valuta-basket">$</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/haeder-footer.js"></script>
+    <script defer src="/js/Making-order.js"></script>
+    <script defer src="/js/cart-hover-foto.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.dadata.ru/suggestions/v4/js/dadata-suggestions.js"></script>
+    <script defer src="/js/modalCart.js"></script>
+    <script defer src="/js/authoris.js"></script>
+    <script defer src="/js/searchHeader.js"></script>
+    
+    
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.dadata.ru">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <title>Оформление заказа</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <%- include("partials/menu.ejs")%>
+    <%- include("partials/modallogin.ejs")%>
+    <!-- main////////////////////////////////////////////////////////////////////////// -->
+    <main>
+        <section id="MakingOrder">
+            <div class="container">
+                <h2 class="text-title">Оформление заказа</h2>
+                <div class="MakingOrder-wp">
+                    <div class="MakingOrder-stages-main-wp">
+                        <!-- отсек1 -->
+                        <div class="MakingOrder-stages-wp" id="RecipientDetails">
+                            <img class="background-MakingOrder-stages" src="img/decor-making-order.png" alt="">
+                            <div class="MakingOrder-heading-status-wp">
+                                <h2 class="MakingOrder-heading-text">Данные получателя</h2>
+
+                                <div class="MakingOrder-status-wp">
+                                    <p class="status-text" id="RecipientDetailsChange">изменить</p>
+                                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg" class="status-text-svg">
+                                        <path d="M12.7104 2.64592C13.6737 1.82501 14.1553 1.41457 14.6589 1.17388C15.8237 0.61717 17.1777 0.61717 18.3424 1.17388C18.846 1.41457 19.3276 1.82501 20.291 2.64592C20.6743 2.97264 20.866 3.13601 21.0708 3.27322C21.5401 3.58777 22.0671 3.80608 22.6213 3.9155C22.8632 3.96325 23.1141 3.98329 23.6164 4.02335C24.878 4.12402 25.5087 4.17436 26.0351 4.36025C27.2522 4.7902 28.2098 5.74764 28.6397 6.96488C28.8256 7.49116 28.8758 8.12196 28.9766 9.38357C29.0166 9.8857 29.0366 10.1368 29.0844 10.3786C29.1938 10.9328 29.4121 11.4599 29.7268 11.9292C29.8639 12.1339 30.0273 12.3256 30.3541 12.709C31.1749 13.6722 31.5854 14.154 31.8261 14.6574C32.3827 15.8222 32.3827 17.1762 31.8261 18.3409C31.5854 18.8446 31.1749 19.3261 30.3541 20.2895C30.0273 20.6728 29.8639 20.8645 29.7268 21.0693C29.4121 21.5386 29.1938 22.0656 29.0844 22.62C29.0366 22.8617 29.0166 23.1128 28.9766 23.6149C28.8758 24.8765 28.8256 25.5072 28.6397 26.0336C28.2098 27.2508 27.2522 28.2083 26.0351 28.6383C25.5087 28.8241 24.878 28.8744 23.6164 28.9751C23.1141 29.0151 22.8632 29.0353 22.6213 29.0829C22.0671 29.1924 21.5401 29.4106 21.0708 29.7253C20.866 29.8625 20.6743 30.0258 20.291 30.3526C19.3276 31.1734 18.846 31.5839 18.3424 31.8246C17.1777 32.3812 15.8237 32.3812 14.6589 31.8246C14.1553 31.5839 13.6737 31.1734 12.7104 30.3526C12.3271 30.0258 12.1354 29.8625 11.9306 29.7253C11.4613 29.4106 10.9343 29.1924 10.38 29.0829C10.1382 29.0353 9.88717 29.0151 9.38504 28.9751C8.12343 28.8744 7.49261 28.8241 6.96634 28.6383C5.74911 28.2083 4.79165 27.2508 4.36172 26.0336C4.17583 25.5072 4.12549 24.8765 4.02482 23.6149C3.98474 23.1128 3.96472 22.8617 3.91697 22.62C3.80755 22.0656 3.58924 21.5386 3.27469 21.0693C3.13747 20.8645 2.97411 20.6728 2.64739 20.2895C1.82648 19.3261 1.41604 18.8446 1.17533 18.3409C0.618639 17.1762 0.618639 15.8222 1.17533 14.6574C1.41604 14.1538 1.82648 13.6722 2.64739 12.709C2.97411 12.3256 3.13747 12.1339 3.27469 11.9292C3.58924 11.4599 3.80755 10.9328 3.91697 10.3786C3.96472 10.1368 3.98474 9.8857 4.02482 9.38357C4.12549 8.12196 4.17583 7.49116 4.36172 6.96488C4.79165 5.74764 5.74911 4.7902 6.96634 4.36025C7.49261 4.17436 8.12343 4.12402 9.38504 4.02335C9.88717 3.98329 10.1382 3.96325 10.38 3.9155C10.9343 3.80608 11.4613 3.58777 11.9306 3.27322C12.1354 3.13601 12.3271 2.97264 12.7104 2.64592Z" stroke="#7880B5" stroke-width="1.5"/>
+                                        <path d="M10.5234 17.354L13.9401 20.7707L22.4818 12.229" stroke="#7880B5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>     
+                                </div>
+                            </div>
+                            <form class="inputs-makingOrder-main-container">
+                                <div class="input-MakingOrder-wp">
+                                    <p class="inuput-MakingOrder-name bg-inuput-pers-info-name">Имя</p>
+                                    <input type="text" name="Name"  class="input-entry-MakingOrder-info" id="inputName" placeholder="Введите ваше имя" required  minlength="4">
+                                </div>
+
+                                <div class="input-MakingOrder-wp">
+                                    <p class="inuput-MakingOrder-name bg-inuput-pers-info-name">Фамилия</p>
+                                    <input type="text" name="SurName"  class="input-entry-MakingOrder-info" id="inputSurname" placeholder="Введите вашу фамилию" required  minlength="4">
+                                </div>
+
+                                <div class="input-MakingOrder-wp">
+                                    <p class="inuput-MakingOrder-name bg-inuput-pers-info-name">Почта</p>
+                                    <input type="email" name="Mail"  class="input-entry-MakingOrder-info" id="inputMail" placeholder="Введите ваш email" required  minlength="4">
+                                </div>
+
+                                <div class="input-MakingOrder-wp">
+                                    <p class="inuput-MakingOrder-name bg-inuput-pers-info-name">Телефон</p>
+                                    <input type="tel" name="Numder"  class="input-entry-MakingOrder-info" id="inputTel" placeholder="Введите ваш номер телефона" required  minlength="4">
+                                </div>
+
+                                <div class="input-MakingOrder-wp">
+                                    <p class="inuput-MakingOrder-name ">Комментарий к заказу</p>    
+                                    <textarea class="comment-makorder-wp" type="text" name="Comment" id="inputComment">
+
+                                    </textarea>
+                                </div>
+                            </form>
+
+                            <div class="button-makorder-wp">
+                                <button class="button button-makorder" id="RecipientDetailButton">далее</button>
+                            </div>
+                            
+                        </div>
+                        <!-- отсек2 -->
+                        <div class="MakingOrder-stages-wp MakingOrder-stages-wp-ready" id="PlaceAndMethod">
+                            <img class="background-MakingOrder-stages" src="img/decor-making-order.png" alt="">
+                            <img class="background-MakingOrder-stages-center" src="img/delivir-center-img.png" alt="">
+                            <img class="background-MakingOrder-stages-bottom" src="img/diliviri-bottom-img.png" alt="">
+
+                            <div class="MakingOrder-heading-status-wp">
+                                <h2 class="MakingOrder-heading-text">Место и способ доставки</h2>
+                                <div class="MakingOrder-status-wp ">
+                                    <p class="status-text" id="PlaceAndMethodChange">изменить</p>
+                                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg"  class="status-text-svg">
+                                        <path d="M12.7104 2.64592C13.6737 1.82501 14.1553 1.41457 14.6589 1.17388C15.8237 0.61717 17.1777 0.61717 18.3424 1.17388C18.846 1.41457 19.3276 1.82501 20.291 2.64592C20.6743 2.97264 20.866 3.13601 21.0708 3.27322C21.5401 3.58777 22.0671 3.80608 22.6213 3.9155C22.8632 3.96325 23.1141 3.98329 23.6164 4.02335C24.878 4.12402 25.5087 4.17436 26.0351 4.36025C27.2522 4.7902 28.2098 5.74764 28.6397 6.96488C28.8256 7.49116 28.8758 8.12196 28.9766 9.38357C29.0166 9.8857 29.0366 10.1368 29.0844 10.3786C29.1938 10.9328 29.4121 11.4599 29.7268 11.9292C29.8639 12.1339 30.0273 12.3256 30.3541 12.709C31.1749 13.6722 31.5854 14.154 31.8261 14.6574C32.3827 15.8222 32.3827 17.1762 31.8261 18.3409C31.5854 18.8446 31.1749 19.3261 30.3541 20.2895C30.0273 20.6728 29.8639 20.8645 29.7268 21.0693C29.4121 21.5386 29.1938 22.0656 29.0844 22.62C29.0366 22.8617 29.0166 23.1128 28.9766 23.6149C28.8758 24.8765 28.8256 25.5072 28.6397 26.0336C28.2098 27.2508 27.2522 28.2083 26.0351 28.6383C25.5087 28.8241 24.878 28.8744 23.6164 28.9751C23.1141 29.0151 22.8632 29.0353 22.6213 29.0829C22.0671 29.1924 21.5401 29.4106 21.0708 29.7253C20.866 29.8625 20.6743 30.0258 20.291 30.3526C19.3276 31.1734 18.846 31.5839 18.3424 31.8246C17.1777 32.3812 15.8237 32.3812 14.6589 31.8246C14.1553 31.5839 13.6737 31.1734 12.7104 30.3526C12.3271 30.0258 12.1354 29.8625 11.9306 29.7253C11.4613 29.4106 10.9343 29.1924 10.38 29.0829C10.1382 29.0353 9.88717 29.0151 9.38504 28.9751C8.12343 28.8744 7.49261 28.8241 6.96634 28.6383C5.74911 28.2083 4.79165 27.2508 4.36172 26.0336C4.17583 25.5072 4.12549 24.8765 4.02482 23.6149C3.98474 23.1128 3.96472 22.8617 3.91697 22.62C3.80755 22.0656 3.58924 21.5386 3.27469 21.0693C3.13747 20.8645 2.97411 20.6728 2.64739 20.2895C1.82648 19.3261 1.41604 18.8446 1.17533 18.3409C0.618639 17.1762 0.618639 15.8222 1.17533 14.6574C1.41604 14.1538 1.82648 13.6722 2.64739 12.709C2.97411 12.3256 3.13747 12.1339 3.27469 11.9292C3.58924 11.4599 3.80755 10.9328 3.91697 10.3786C3.96472 10.1368 3.98474 9.8857 4.02482 9.38357C4.12549 8.12196 4.17583 7.49116 4.36172 6.96488C4.79165 5.74764 5.74911 4.7902 6.96634 4.36025C7.49261 4.17436 8.12343 4.12402 9.38504 4.02335C9.88717 3.98329 10.1382 3.96325 10.38 3.9155C10.9343 3.80608 11.4613 3.58777 11.9306 3.27322C12.1354 3.13601 12.3271 2.97264 12.7104 2.64592Z" stroke="#7880B5" stroke-width="1.5"/>
+                                        <path d="M10.5234 17.354L13.9401 20.7707L22.4818 12.229" stroke="#7880B5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>     
+                                </div>
+                            </div>
+
+                            <div class="inputs-makingOrder-main-container">
+                                <div class="input-MakingOrder-wp">
+                                    <p class="inuput-MakingOrder-name bg-inuput-pers-info-name">Введите место доставки</p>
+                                    <input type="text" name="Name" id="inputAdress" class="input-entry-PlaceAndMethod-info" placeholder="Введите город, улицу, дом, квартиру" required  minlength="4">
+                                    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+                                    <script type="text/javascript" src="https://dadata.ru/static/js/lib/jquery.suggestions-15.7.min.js"></script>
+                                    
+                                    <script>
+                                        $("#inputAdress").suggestions({
+                                        serviceUrl: "http://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
+                                        token: "<%= token %>",
+                                        type: "ADDRESS",
+                                        count: 5,
+                                        
+                                        /* Вызывается, когда пользователь выбирает одну из подсказок */
+                                        onSelect: function(suggestion) {
+                                            $("#inputAdress").val(suggestion.value);
+                                            
+                                        }
+                                        });
+                                        </script>
+                                    <div class="" id="suggestions"></div>
+                                </div>
+                                <div class="input-MakingOrder-wp">
+                                    <p class="inuput-MakingOrder-name">Выберите способ доставки</p>
+                                    
+                                    <div class="inputs-basket-info-delivir-method-wp">
+                                        <label class="input-deliviri-method" for="Courier" id="CourierLabel"> 
+                                            <input type="radio" name="Payment-method" id="Courier"  class="payment-method-radio-custom" checked >
+                                            <div class="deliviri-method-radio-custom-before deliviri-method-radio-custom-before-active">
+                                                <div class="deliviri-method-radio-custom-after deliviri-method-radio-custom-after-active"></div>
+                                            </div>
+                                            <div class="deliviri-method-text">Курьерская доставка</div>
+                                        </label>
+                                        <label class="input-deliviri-method" for="SelfCall" id="SelfCallLabel">
+                                            <input type="radio" name="Payment-method" id="SelfCall"  class="payment-method-radio-custom">
+                                            <div class="deliviri-method-radio-custom-before">
+                                                <div class="deliviri-method-radio-custom-after"></div>
+                                            </div>
+                                            <div class="deliviri-method-text">Самовызов в москве</div>
+                                        </label>
+                                        <label class="input-deliviri-method" for="TransferLine" id="TransferLineLabel">
+                                            <input type="radio" name="Payment-method" id="TransferLine"  class="payment-method-radio-custom">
+                                            <div class="deliviri-method-radio-custom-before">
+                                                <div class="deliviri-method-radio-custom-after"></div>
+                                            </div>
+                                            <div class="deliviri-method-text">Доставка до транспартной линии</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="button-makorder-wp">
+                                <button class="button button-makorder" id="PlaceAndMethodButton">далее</button>
+                            </div>
+
+                        </div>
+                        <!-- отсек3 -->
+                        <div class="MakingOrder-stages-wp MakingOrder-stages-wp-ready" id="ProductsInTheOrder">
+                            <img class="background-MakingOrder-stages" src="img/decor-making-order.png" alt="">
+                            <div class="MakingOrder-heading-status-wp">
+                                <h2 class="MakingOrder-heading-text ProductsInTheOrder-text-heading">Товары в заказе</h2>
+
+                                <div class="MakingOrder-status-wp ">
+                                    <p class="status-text" id="ProductsInTheOrderChange">изменить</p>
+                                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg"  class="status-text-svg">
+                                        <path d="M12.7104 2.64592C13.6737 1.82501 14.1553 1.41457 14.6589 1.17388C15.8237 0.61717 17.1777 0.61717 18.3424 1.17388C18.846 1.41457 19.3276 1.82501 20.291 2.64592C20.6743 2.97264 20.866 3.13601 21.0708 3.27322C21.5401 3.58777 22.0671 3.80608 22.6213 3.9155C22.8632 3.96325 23.1141 3.98329 23.6164 4.02335C24.878 4.12402 25.5087 4.17436 26.0351 4.36025C27.2522 4.7902 28.2098 5.74764 28.6397 6.96488C28.8256 7.49116 28.8758 8.12196 28.9766 9.38357C29.0166 9.8857 29.0366 10.1368 29.0844 10.3786C29.1938 10.9328 29.4121 11.4599 29.7268 11.9292C29.8639 12.1339 30.0273 12.3256 30.3541 12.709C31.1749 13.6722 31.5854 14.154 31.8261 14.6574C32.3827 15.8222 32.3827 17.1762 31.8261 18.3409C31.5854 18.8446 31.1749 19.3261 30.3541 20.2895C30.0273 20.6728 29.8639 20.8645 29.7268 21.0693C29.4121 21.5386 29.1938 22.0656 29.0844 22.62C29.0366 22.8617 29.0166 23.1128 28.9766 23.6149C28.8758 24.8765 28.8256 25.5072 28.6397 26.0336C28.2098 27.2508 27.2522 28.2083 26.0351 28.6383C25.5087 28.8241 24.878 28.8744 23.6164 28.9751C23.1141 29.0151 22.8632 29.0353 22.6213 29.0829C22.0671 29.1924 21.5401 29.4106 21.0708 29.7253C20.866 29.8625 20.6743 30.0258 20.291 30.3526C19.3276 31.1734 18.846 31.5839 18.3424 31.8246C17.1777 32.3812 15.8237 32.3812 14.6589 31.8246C14.1553 31.5839 13.6737 31.1734 12.7104 30.3526C12.3271 30.0258 12.1354 29.8625 11.9306 29.7253C11.4613 29.4106 10.9343 29.1924 10.38 29.0829C10.1382 29.0353 9.88717 29.0151 9.38504 28.9751C8.12343 28.8744 7.49261 28.8241 6.96634 28.6383C5.74911 28.2083 4.79165 27.2508 4.36172 26.0336C4.17583 25.5072 4.12549 24.8765 4.02482 23.6149C3.98474 23.1128 3.96472 22.8617 3.91697 22.62C3.80755 22.0656 3.58924 21.5386 3.27469 21.0693C3.13747 20.8645 2.97411 20.6728 2.64739 20.2895C1.82648 19.3261 1.41604 18.8446 1.17533 18.3409C0.618639 17.1762 0.618639 15.8222 1.17533 14.6574C1.41604 14.1538 1.82648 13.6722 2.64739 12.709C2.97411 12.3256 3.13747 12.1339 3.27469 11.9292C3.58924 11.4599 3.80755 10.9328 3.91697 10.3786C3.96472 10.1368 3.98474 9.8857 4.02482 9.38357C4.12549 8.12196 4.17583 7.49116 4.36172 6.96488C4.79165 5.74764 5.74911 4.7902 6.96634 4.36025C7.49261 4.17436 8.12343 4.12402 9.38504 4.02335C9.88717 3.98329 10.1382 3.96325 10.38 3.9155C10.9343 3.80608 11.4613 3.58777 11.9306 3.27322C12.1354 3.13601 12.3271 2.97264 12.7104 2.64592Z" stroke="#7880B5" stroke-width="1.5"/>
+                                        <path d="M10.5234 17.354L13.9401 20.7707L22.4818 12.229" stroke="#7880B5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>     
+                                </div>
+                            </div>
+
+                            <div class="inputs-makingOrder-main-container-basket">
+                                <div class="favourites-item-wp " id=''>
+                                    <div class="favourites-img-description-wp">
+                                        <img src="img/tualet-noFon.png" alt="" class="favourites-img">
+                                        <div class="favourites-description-wp">
+                                        <p class="favourites-description">
+                                            йоу братуха
+                                        </p>
+                                        </div>
+                                    </div>
+            
+                                    <div class="favourites-price-button-wp">
+                                        <div class="basket-count-wp">
+                                            <p class="favourites-text">Количество</p>
+                                            <div class="basket-count-counter-wp">
+                                                <div class="basket-button-subtract" id="BasketSubtract">
+                                                    <svg width="10" height="2" viewBox="0 0 6 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <line y1="1" x2="7" y2="1" stroke="white" stroke-width="2"/>
+                                                    </svg>
+                                                        
+                                                </div>
+                                                <div class="basket-quantity">1</div>
+                                                <div class="basket-button-addition" id="BasketAddition">
+                                                    <svg width="20" height="20" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                                                        <path d="M6 12H18M12 6V18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+                                                        </g>
+                                                    </svg>
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="basket-price-wp">
+                                            <p class="favourites-text">Цена</p>
+                                            <p class="favourites-price-text">$4 050</p>
+                                        </div> 
+                                        <div class="favourites-button-wp">
+                                            <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.789 10.6895C21.789 22.0498 23.4242 27.1848 12.4255 27.1848C1.42539 27.1848 3.09436 22.0498 3.09436 10.6895" stroke="#727272" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M23.8798 6.33476H1" stroke="#727272" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M17.2929 6.33476C17.2929 6.33476 18.0417 1 12.4398 1C6.83921 1 7.58802 6.33476 7.58802 6.33476" stroke="#727272" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <!-- карточка -->
+                                <div class="favourites-item-wp " id=''>
+                                    <div class="favourites-img-description-wp">
+                                        <img src="img/tualet-noFon.png" alt="" class="favourites-img">
+                                        <div class="favourites-description-wp">
+                                        <p class="favourites-description">
+                                            йоу братуха
+                                        </p>
+                                        </div>
+                                    </div>
+            
+                                    <div class="favourites-price-button-wp">
+                                        <div class="basket-count-wp">
+                                            <p class="favourites-text">Количество</p>
+                                            <div class="basket-count-counter-wp">
+                                                <div class="basket-button-subtract" id="BasketSubtract">
+                                                    <svg width="10" height="2" viewBox="0 0 6 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <line y1="1" x2="7" y2="1" stroke="white" stroke-width="2"/>
+                                                    </svg>
+                                                        
+                                                </div>
+                                                <div class="basket-quantity">1</div>
+                                                <div class="basket-button-addition" id="BasketAddition">
+                                                    <svg width="20" height="20" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+                                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                                                        <path d="M6 12H18M12 6V18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+                                                        </g>
+                                                    </svg>
+                                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="basket-price-wp">
+                                            <p class="favourites-text">Цена</p>
+                                            <p class="favourites-price-text">$4 050</p>
+                                        </div> 
+                                        <div class="favourites-button-wp">
+                                            <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.789 10.6895C21.789 22.0498 23.4242 27.1848 12.4255 27.1848C1.42539 27.1848 3.09436 22.0498 3.09436 10.6895" stroke="#727272" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M23.8798 6.33476H1" stroke="#727272" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M17.2929 6.33476C17.2929 6.33476 18.0417 1 12.4398 1C6.83921 1 7.58802 6.33476 7.58802 6.33476" stroke="#727272" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="button-makorder-wp">
+                                <button class="button button-makorder" id="ProductsInTheOrderButton">далее</button>
+                            </div>
+                            
+                                
+                        </div>
+                        <!-- отсек4 -->
+                        
+                    </div>
+                    <div class="MakingOrder-info-wp">
+                        <h3 class="MakingOrder-info-heading-text">Итого</h3>
+
+                        <div class="MakingOrder-info-product-information-wp">
+                            <div class="MakingOrder-information-item-wp">
+                                <p class="MakingOrder-information-item">8 товаров на сумму</p>
+                                <p class="MakingOrder-information-item">45 000$</p>
+                            </div>
+                            <div class="MakingOrder-information-item-wp">
+                                <p class="MakingOrder-information-item">Скидка</p>
+                                <p class="MakingOrder-information-item">4 545$</p>
+                            </div>
+                            <div class="MakingOrder-information-item-wp">
+                                <p class="MakingOrder-information-item">К оплате</p>
+                                <p class="MakingOrder-information-item-end">45 000$</p>
+                            </div>    
+                        </div>
+
+                        <div class="inputs-basket-info-payment-method-wp">
+                            <label class="input-payment-method" for="Card" id="CardLabel"> 
+                                <input type="radio" name="Payment-method" id="Card"  class="payment-method-radio-custom" checked >
+                                <div class="payment-method-radio-custom-before payment-method-radio-custom-before-active">
+                                    <div class="payment-method-radio-custom-after payment-method-radio-custom-after-active"></div>
+                                </div>
+                                <div class="payment-method-text">Оплата картой</div>
+                            </label>
+                            <label class="input-payment-method" for="Cash" id="CashLabel">
+                                <input type="radio" name="Payment-method" id="Cash"  class="payment-method-radio-custom">
+                                <div class="payment-method-radio-custom-before">
+                                    <div class="payment-method-radio-custom-after"></div>
+                                </div>
+                                <div class="payment-method-text">Оплата при получении</div>
+                            </label>
+                        </div>
+
+                        <div class="button-makorder-wp">
+                            <button class="button button-MakingOrder" >заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer ////////////////////////////////////////////////////////////////////////////-->
+    <%- include("partials/footer.ejs")%>
+    <%- include("partials/card.ejs")%>
+</body>
+</html>

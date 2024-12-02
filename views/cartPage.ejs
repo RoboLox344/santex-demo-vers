@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/haeder-footer.js"></script>
+    <script defer src="/js/index.js"></script>
+    <script defer src="/js/basket_main.js"></script>
+    <script defer src="/js/modalCart.js"></script>
+    <script defer src="/js/authoris.js"></script>
+    <script defer src="/js/searchHeader.js"></script>
+    <title>Корзина</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <%- include("partials/menu.ejs")%>
+    <%- include("partials/modallogin.ejs")%>
+
+    <!-- main -->
+     <main>
+        <section id="basket">
+            <div class="container">
+                <h2 class="text-title">Корзина</h2>
+                <div class="basket-wp">
+                    <div class="basket-products-wp">
+                            <!-- карточка -->
+                            
+                            <!-- карточка -->
+                            
+                            <!-- карточка -->
+                                                    
+                    </div>
+                    <div class="basket-info-wp">
+                        <h3 class="basket-info-heading-text">Итого</h3>
+
+                        <div class="basket-info-product-information-wp">
+                           <!-- инфа о заказе -->
+                        </div>
+
+                        <input type="text" name="Sale" id="Sale" class="input-basket-info" placeholder="Введите купон" required  minlength="4">
+
+                        <h3 class="basket-info-heading-text">Способ оплаты</h3>
+
+                        <div class="inputs-basket-info-payment-method-wp">
+                            <label class="input-payment-method" for="Card" id="CardLabel"> 
+                                <input type="radio" name="Payment-method" id="Card"  class="payment-method-radio-custom" checked >
+                                <div class="payment-method-radio-custom-before payment-method-radio-custom-before-active">
+                                    <div class="payment-method-radio-custom-after payment-method-radio-custom-after-active"></div>
+                                </div>
+                                <div class="payment-method-text">Оплата картой</div>
+                            </label>
+                            <label class="input-payment-method" for="Cash" id="CashLabel">
+                                <input type="radio" name="Payment-method" id="Cash"  class="payment-method-radio-custom">
+                                <div class="payment-method-radio-custom-before">
+                                    <div class="payment-method-radio-custom-after"></div>
+                                </div>
+                                <div class="payment-method-text">Оплата при получении</div>
+                            </label>
+                        </div>
+                        
+                        <div class="button-basket-info-wp">
+                            <a href="/MakingAnOrder" class="button button-basket-info">офромить заказ</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+     </main>
+
+     <!-- Футер -->
+     <%- include("partials/footer.ejs")%>
+     <%- include("partials/card.ejs")%>
+</body>
+</html>

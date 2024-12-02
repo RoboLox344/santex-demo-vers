@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="js/index.js"></script>
+    <script defer src="js/karusel-hits.js"></script>
+    <script defer src="js/haeder-footer.js"></script>
+    
+    <script defer src="/js/modalCart.js"></script>
+    <script defer src="/js/authoris.js"></script>
+    <script defer src="/js/searchHeader.js"></script>
+    <title>Контакты</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <%- include("partials/menu.ejs")%>
+    <%- include("partials/modallogin.ejs")%>
+
+    <main>
+        <section id="contacts">
+            <div class="container">
+                <div class="contacts-main-wp">
+                    <div class="Moscow-contacts-wp">
+                        <h3>Москва, Московская область </h3>
+                        <div class="contacts-info-wp">
+                            <h4><a class="contats-adress" href="#">г. Москва, МКАД, 41-й километр, 4с33 офис Л 4/4</a></h4>
+                            <a href="mailto:santeh.ventil@mail.ru" class="footer-catalog-links" >santeh.ventil@mail.ru</a>
+                            <a href="tel:+74950050544" class="footer-catalog-links" >+7 495 005-05-44</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Футер -->
+    
+    <%- include("partials/footer.ejs")%>
+    <%- include("partials/card.ejs")%>
+</body>
+</html>

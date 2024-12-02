@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/haeder-footer.js"></script>
+    <script defer type="module" src="/js/filter.js"></script>
+    <script defer src="/js/modalCart.js"></script>
+    <script defer src="/js/authoris.js"></script>
+    <script defer src="/js/searchHeader.js"></script>
+  <!--   <script defer src="https://unpkg.com/google-translate-api-browser/dist/google-translate-api-browser.min.js"></script> переводчик библиотека -->
+
+    <!-- <script defer src="/js/cart-hover-foto.js"></script> -->
+    <title>Отопление</title>
+</head>
+<body>
+    <%- include("partials/header.ejs")%>
+    <%- include("partials/menu.ejs")%>
+    <%- include("partials/modallogin.ejs")%>
+
+    <!-- main -->
+     <main>
+        <section id="otoplenie">
+            <div class="container container-ferst-mobail">
+                <h2 class="text-hd--katalog">Отопление<sup class="total-count">333</sup></h2>
+            </div>
+        </section>
+
+        <section id="Otop-tovar">
+            <div class="container cont-bt-mob">
+                <div class="wp-otoplenie">
+                    <%-include("partials/filter.ejs")%>
+                       
+                    <div class="catalog-wp " id="catalog-wp">
+                        <!-- карточки товара -->
+                    </div>
+                    <div class="more">
+                        Показать еще
+                     </div>
+                    
+
+                </div>
+            </div>
+        </section>
+     </main>
+
+     <!-- Футер -->
+     <%- include("partials/footer.ejs")%>
+     <%- include("partials/card.ejs")%>
+</body>
+</html>

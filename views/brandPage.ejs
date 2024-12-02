@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <script defer src="/js/index.js"></script>
+        
+        <script defer src="/js/haeder-footer.js"></script>
+        
+        <script defer src="/js/filter.js"></script>
+        <script defer src="/js/modalCart.js"></script>
+        <script defer src="/js/authoris.js"></script>
+        <script defer src="/js/searchHeader.js"></script>
+        
+        
+        <title>Стринца Бренда</title>
+    </head>
+<body>
+
+    <%- include("partials/header.ejs")%>
+    <%- include("partials/menu.ejs")%>
+    <%- include("partials/modallogin.ejs")%>
+    
+    <!-- sdsdssssssssssssss -->
+    <main>
+        <section id="otoplenie">
+            <div class="container container-ferst-mobail">
+                <h2 class="text-hd--katalog"><%= brand.name%></h2><sup class="total-count"></sup>
+                <div class="present-brends-wp">
+                    <div class="img-traget-brends-wp">
+                        <img src="/img/<%= brand.filename %>.jpg" alt="" class="img-traget-brends">
+                    </div>
+                    <div class="wp-text-target-breand">
+                        <p class="text-target-breand">
+                            <%= brand.description%>
+                            
+                        </p>
+                    </div>
+                </div>
+
+                <div class="sub-catalog-wp" id="SubСtOtop">
+                    <!-- подкатегор -->
+                </div>
+            
+            </div>
+        </section>
+
+        <section id="Otop-tovar">
+            <div class="container cont-bt-mob">
+                <div class="wp-otoplenie">
+                    <%-include("partials/filter.ejs")%>
+                       
+                    <div class="catalog-wp " id="catalog-wp">
+                        <!-- карточки товара -->
+                    </div>
+                    <div class="more">
+                        Показать еще
+                     </div>
+                    
+
+                </div>
+            </div>
+        </section>
+     </main>
+
+    <!-- Футер -->
+    <%- include("partials/footer.ejs")%>
+    <%- include("partials/card.ejs")%>
+    
+</body>
+</html>
